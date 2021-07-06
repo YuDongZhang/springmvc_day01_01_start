@@ -8,6 +8,13 @@
     <servlet>
         <servlet-name>dispatcherServlet</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!--  全局初始化的参数      -->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:springmvc.xml</param-value>
+        </init-param>
+        <!--加载的等级-->
+        <load-on-startup>1</load-on-startup>
     </servlet>
 
     <!-- 一个名称一个已拦截的路径 -->
