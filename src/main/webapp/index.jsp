@@ -11,7 +11,13 @@
     <title>Title</title>
 </head>
 <body>
-    <h3>入门程序</h3>
+<h3>入门程序</h3>
+
+<%--
     <a href="hello">入门程序</a>
+    --%>
+
+<a href="user/testRequestMapping">requestMapping注解</a>
+
 </body>
 </html>
