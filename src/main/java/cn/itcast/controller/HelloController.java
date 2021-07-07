@@ -2,6 +2,7 @@ package cn.itcast.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 //控制器类
 @Controller//springioc容器
@@ -16,9 +17,15 @@ public class HelloController {
 
     /**
      * requestMapping
+     *
      * @return
      */
-    @RequestMapping(path = "/testRequestMapping")
+//    @RequestMapping(value = "/testRequestMapping")//value 和path一样 , 如果是value上可以省略的
+//    @RequestMapping("/testRequestMapping")
+//    @RequestMapping(value = "/testRequestMapping", method = {RequestMethod.POST})
+//    @RequestMapping(value = "/testRequestMapping",params = {"username"})//说明请求这个方法必须传username
+//    @RequestMapping(value = "/testRequestMapping",params = {"username=hi"})//传的时候username也得等于hi才行
+    @RequestMapping(value = "/testRequestMapping",params = {"username=hi"},headers = {"accept"})//传的时候username也得等于hi才行
     public String testRequestMapping() {
         System.out.println("测试requestMapping注解---");
         return "success";
