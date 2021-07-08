@@ -10,7 +10,7 @@ public class Account implements Serializable{
     private String password;
     private Double money;
 
-    private User user;
+//    private User user;
 
     private List<User> list;
     private Map<String,User> map;
@@ -56,13 +56,13 @@ public class Account implements Serializable{
     }
 
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
+//    public User getUser() {
+//        return user;
+//    }
+//
+//    public void setUser(User user) {
+//        this.user = user;
+//    }
 
     @Override
     public String toString() {
@@ -70,7 +70,7 @@ public class Account implements Serializable{
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", money=" + money +
-                ", user="+user.toString()+
+//                ", user="+user.toString()+
                 ", list=" + list +
                 ", map=" + map +
                 '}';
