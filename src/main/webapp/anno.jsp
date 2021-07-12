@@ -45,8 +45,8 @@
     <br>
 
 
-    <a href="anno/testSessionAttributes">testSessionAttributes</a>
-    <a href="anno/getSessionAttributes">getSessionAttributes</a>
+    <a href="anno/testSessionAttributes">testSessionAttributes</a><br>
+    <a href="anno/getSessionAttributes">getSessionAttributes</a><br>
     <a href="anno/delSessionAttributes">delSessionAttributes</a>
 
 </body>

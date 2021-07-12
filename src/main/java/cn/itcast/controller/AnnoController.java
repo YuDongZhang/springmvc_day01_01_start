@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -129,7 +130,35 @@ public class AnnoController {
     }
 
 
+    /**
+     * 测试的时候先点击 存值 testSessionAttributes, 再点取值 getSessionAttributes
+     * 获取值
+     * @param modelMap
+     * @return
+     */
+    @RequestMapping(value="/getSessionAttributes")
+    public String getSessionAttributes(ModelMap modelMap){
+        System.out.println("getSessionAttributes...");
+        String msg = (String) modelMap.get("msg");
+        System.out.println(msg);
+        return "success";
+    }
 
+
+
+    /**
+     * 先点testSessionAttributes ,再点 delSessionAttributes , 再点 getSessionAttributes
+     *
+     * 清除
+     * @param status
+     * @return
+     */
+    @RequestMapping(value="/delSessionAttributes")
+    public String delSessionAttributes(SessionStatus status){
+        System.out.println("getSessionAttributes...");
+        status.setComplete();
+        return "success";
+    }
 
 
 
