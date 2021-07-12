@@ -20,8 +20,18 @@
         <property name="suffix" value=".jsp"></property>
     </bean>
 
-    <!-- 配置spring开启注解mvc的支持-->
-    <mvc:annotation-driven></mvc:annotation-driven>
+    <!-- 配置自定义类型转换器   -->
+    <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="cn.itcast.utils.StringToDateConverter"></bean>
+            </set>
+        </property>
+    </bean>
+
+    <!-- 配置spring开启注解mvc的支持 , 系统默认的会生效 , 自定义的需要配置一下-->
+    <mvc:annotation-driven conversion-service="conversionService"></mvc:annotation-driven>
+
 
 
 </beans>
