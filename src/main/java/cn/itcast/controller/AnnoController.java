@@ -58,5 +58,16 @@ public class AnnoController {
         return "redirect:/param.jsp";
     }
 
+    /**
+     * 获取Cookie的值
+     * @return
+     */
+    @RequestMapping(value="/testCookieValue")
+    public String testCookieValue(@CookieValue(value="JSESSIONID") String cookieValue){
+        System.out.println("执行了...");
+        System.out.println(cookieValue);
+        return "success";
+    }
+
 
 }

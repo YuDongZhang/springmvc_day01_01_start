@@ -30,5 +30,9 @@
 
     <a href="anno/testRequestHeader">RequestHeader</a>
 
+    <br>
+
+    <a href="anno/testCookieValue">CookieValue</a>
+
 </body>
 </html>
