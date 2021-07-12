@@ -1,11 +1,13 @@
 package cn.itcast.controller;
 
+import cn.itcast.domain.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Date;
 
 /**
  * 常用注解
@@ -67,6 +69,33 @@ public class AnnoController {
         System.out.println("执行了...");
         System.out.println(cookieValue);
         return "success";
+    }
+
+    /**
+     * ModelAttribute注解
+     * @return
+     */
+    @RequestMapping(value="/testModelAttribute")
+    public String testModelAttribute(User user){
+        System.out.println("testModelAttribute执行了...");
+        System.out.println(user);
+        return "success";
+    }
+
+    /**
+     * 这方法会先执行
+     * @param uname
+     * @return
+     */
+    @ModelAttribute
+    public User showUser(String uname){
+        System.out.println("showUser执行了");
+        // 通过用户查询数据库（模拟）
+        User user = new User();
+        user.setUname(uname);
+        user.setAge(20);
+        user.setDate(new Date());
+        return user;
     }
 
 
