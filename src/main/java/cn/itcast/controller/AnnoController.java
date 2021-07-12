@@ -2,6 +2,7 @@ package cn.itcast.controller;
 
 import cn.itcast.domain.User;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -111,6 +112,20 @@ public class AnnoController {
         user.setDate(new Date());
         map.put("abc",user);
     }
+
+
+    /**
+     * SessionAttributes的注解
+     * @return
+     */
+    @RequestMapping(value="/testSessionAttributes")
+    public String testSessionAttributes(Model model){
+        System.out.println("testSessionAttributes...");
+        // 底层会存储到request域对象中
+        model.addAttribute("msg","美美");
+        return "success";
+    }
+
 
 
 

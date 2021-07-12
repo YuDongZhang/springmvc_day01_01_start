@@ -42,5 +42,12 @@
         <input type="submit" value="提交" />
     </form>
 
+    <br>
+
+
+    <a href="anno/testSessionAttributes">testSessionAttributes</a>
+    <a href="anno/getSessionAttributes">getSessionAttributes</a>
+    <a href="anno/delSessionAttributes">delSessionAttributes</a>
+
 </body>
 </html>
