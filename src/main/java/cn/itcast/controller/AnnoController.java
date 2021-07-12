@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Date;
+import java.util.Map;
 
 /**
  * 常用注解
@@ -76,7 +77,7 @@ public class AnnoController {
      * @return
      */
     @RequestMapping(value="/testModelAttribute")
-    public String testModelAttribute(User user){
+    public String testModelAttribute(@ModelAttribute("abc") User user){
         System.out.println("testModelAttribute执行了...");
         System.out.println(user);
         return "success";
@@ -86,7 +87,7 @@ public class AnnoController {
      * 这方法会先执行
      * @param uname
      * @return
-     */
+
     @ModelAttribute
     public User showUser(String uname){
         System.out.println("showUser执行了");
@@ -97,6 +98,20 @@ public class AnnoController {
         user.setDate(new Date());
         return user;
     }
+     */
+
+    //方法没有返回值的时候
+    @ModelAttribute
+    public void showUser(String uname, Map<String,User> map){
+        System.out.println("showUser执行了...");
+        // 通过用户查询数据库（模拟）
+        User user = new User();
+        user.setUname(uname);
+        user.setAge(20);
+        user.setDate(new Date());
+        map.put("abc",user);
+    }
+
 
 
 }
