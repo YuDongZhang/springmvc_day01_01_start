@@ -1,10 +1,11 @@
 package cn.itcast.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * 常用注解
@@ -40,6 +41,21 @@ public class AnnoController {
         System.out.println("执行了...");
         System.out.println(id);
         return "success";
+    }
+
+
+    /**
+     * 获取请求头的值
+     * @param header
+     * @return
+     */
+    @RequestMapping(value="/testRequestHeader")
+    public String testRequestHeader(@RequestHeader(value="Accept") String header, HttpServletRequest request, HttpServletResponse response) throws IOException {
+        System.out.println("执行了...");
+        System.out.println(header);
+        // return "success";
+        // response.sendRedirect(request.getContextPath()+"/anno/testCookieValue");
+        return "redirect:/param.jsp";
     }
 
 
