@@ -3,6 +3,7 @@ package cn.itcast.controller;
 import cn.itcast.domain.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,6 +17,7 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/anno")
+@SessionAttributes(value = "msg")//把 msg=美美存到 session 域对象中
 public class AnnoController {
 
     @RequestMapping("/testRequestParam")
@@ -125,6 +127,8 @@ public class AnnoController {
         model.addAttribute("msg","美美");
         return "success";
     }
+
+
 
 
 

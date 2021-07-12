@@ -12,10 +12,9 @@
 </head>
 <body>
     <h3>入门成功</h3>
-
-    ${ msg }
-    <h1>获取所有的域对象</h1>
-    ${requestScope}
+    ${requestScope.msg}
+    ${msg}
+    ${sessionScope}
 
 
 </body>
