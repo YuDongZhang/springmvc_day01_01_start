@@ -1,6 +1,7 @@
 package cn.itcast.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,5 +30,17 @@ public class AnnoController {
         System.out.println(body);
         return "success";
     }
+
+    /**
+     * PathVariable注解
+     * @return
+     */
+    @RequestMapping(value="/testPathVariable/{sid}")
+    public String testPathVariable(@PathVariable(name="sid") String id){
+        System.out.println("执行了...");
+        System.out.println(id);
+        return "success";
+    }
+
 
 }
